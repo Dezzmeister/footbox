@@ -1,0 +1,39 @@
+#include <windows.h>
+#include "RESOURCE.h"
+
+//Resource Script file handwritten by Dezzy
+
+IDI_DONBOSCO ICON "resources/donbosco.ico"
+
+IDI_FACEICON ICON "resources/faceicon.ico"
+
+IDR_TESTMENU MENU 
+BEGIN
+	POPUP "&File"
+	BEGIN
+		MENUITEM "E&xit", ID_FILE_EXIT
+	END
+	
+	POPUP "&Junk"
+	BEGIN
+		MENUITEM "&YEE", ID_JUNK_YEE
+		MENUITEM "G&RAY YEE", 0, GRAYED
+	END
+	
+	POPUP "&Help"
+	BEGIN
+		MENUITEM "&About", ID_HELP_ABOUT
+	END
+END
+
+//Located in Help/About
+IDD_ABOUT DIALOGEX DISCARDABLE 0, 0, 239, 66
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "About"
+FONT 8, "MS Sans Serif"
+BEGIN	
+	DEFPUSHBUTTON 		"&OK",IDOK,174,18,50,14
+	PUSHBUTTON 			"&Close",IDCANCEL,174,35,50,14
+	GROUPBOX			"About this program...",IDC_STATICID,7,7,225,52
+	CTEXT				"This program is currently useless.",IDC_STATICID,16,18,144,33
+END
